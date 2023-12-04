@@ -41,7 +41,7 @@ paintColor= colorInput.value;
    // } 
   //} 
     
-  function mouseMoved() { 
+  function mouseDragged() { 
     fill('white'); 
     noStroke(); 
     circle(mouseX, mouseY, 20); 
