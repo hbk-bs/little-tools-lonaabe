@@ -3,9 +3,17 @@ const colorInput = document.querySelector ('input#color');
 console.log(colorInput);
 let paintColor = 'lightblue';
 colorInput.value = paintColor;
+var spot = {
+    x: 300,
+    y: 400
+}
+   // let eraseEnable = false; 
+    
+
+var color= {paintColor} 
 
 function setup () {
-const canvas =createCanvas (500,500);
+const canvas =createCanvas (600,700);
 canvas. parent ('sketch');
 console.log (saveButton);
 background (255);
@@ -17,30 +25,56 @@ colorInput.addEventListener ('input', ()=> {
 paintColor= colorInput.value;
 
 });
+//toggleBtn = createButton(" Toggelerase"); 
+  //toggleBtn.position(windowWidth/2,windowHeight); 
+ // toggleBtn.mouseClicked(toggleErase); 
+} 
+  
+//function toggleErase() { 
+   // if (eraseEnable) { 
+  //    noErase(); 
+   //   eraseEnable = false; 
+   // } 
+   // else { 
+   //   erase(); 
+ //     eraseEnable = true; 
+   // } 
+  //} 
+    
+  function mouseMoved() { 
+    fill('backgroundColor'); 
+    noStroke(); 
+    circle(mouseX, mouseY, 20); 
+  } 
 
+
+
+
+
+
+function draw() 
+{
+spot.x =random (0, width);
+spot.y =random (0, height);
+ellipse (spot.x, spot.y, 30,30);
+fill (paintColor);
+if (frameCount > 1500) { noLoop(); }
 }
 
-function draw() {
 
+//function mouseDragged () {
+  // fill(paintColor); 
+   // circle (mouseX, mouseY, 20);
 
-
-
-
-}
-
-function mouseDragged () {
-   fill(paintColor); 
-    circle (mouseX, mouseY, 10);
-line (pmouseX, pmouseY, mouseX, mouseY);
-for (let i = 0; i <100; i++){
-    point (mouseX + random (-10, 10),
-    mouseY + random (-10, 10));
-}
-function mouseDragged(){
+//for (let i = 0; i <100; i++){
+   // point (mouseX + random (-10, 10),
+ //   mouseY + StrokeWeight (random(5)));
+//}
+function clicked(){
 
     save('image.png')
 }
-}
+//}
 function keyPressed () {
 if (key === 's') {
     save ('image.png')
