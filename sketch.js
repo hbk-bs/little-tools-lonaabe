@@ -1,7 +1,7 @@
 const saveButton= document.querySelector ('button#save');
 const colorInput = document.querySelector ('input#color');
 console.log(colorInput);
-let paintColor = 'lightblue';
+let paintColor = 'lightgreen';
 colorInput.value = paintColor;
 var spot = {
     x: 300,
@@ -42,7 +42,7 @@ paintColor= colorInput.value;
   //} 
     
   function mouseMoved() { 
-    fill('backgroundColor'); 
+    fill('white'); 
     noStroke(); 
     circle(mouseX, mouseY, 20); 
   } 
@@ -56,9 +56,10 @@ function draw()
 {
 spot.x =random (0, width);
 spot.y =random (0, height);
-ellipse (spot.x, spot.y, 30,30);
+ellipse (spot.x, spot.y, 35,35);
 fill (paintColor);
-if (frameCount > 1500) { noLoop(); }
+
+if (frameCount > 3000) { noLoop(); }
 }
 
 
